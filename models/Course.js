@@ -1,1 +1,0 @@
-// Course model (Mongoose schema)
