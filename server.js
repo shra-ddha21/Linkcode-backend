@@ -1,5 +1,9 @@
+require('dotenv').config(); // Always load env variables first!
 const app = require('./app');
-require('dotenv').config();
+const connectDB = require('./config/db'); // 1. Import the database connection
+
+// 2. Use the imported function to connect to MongoDB
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
