@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 // Generate Access Token (Expires in 15 minutes)
 const generateAccessToken = (userId, userRole) => {
@@ -18,7 +18,7 @@ const generateRefreshToken = (userId) => {
   );
 };
 
-module.exports = {
+export {
   generateAccessToken,
   generateRefreshToken
 };

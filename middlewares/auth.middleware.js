@@ -1,10 +1,10 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
 const isAuthenticated = async (req, res, next) => {
   try {
     // 1. Read accessToken from cookies
-    // (Ensure you have cookie-parser middleware set up in app.js/server.js)
+
     const token = req.cookies.accessToken;
 
     if (!token) {
@@ -18,8 +18,7 @@ const isAuthenticated = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     // 3. Attach user info to req.user
-    // We look up the full user to ensure they still exist and aren't deleted/banned
-    // We use .select('-password') so the password hash is excluded from req.user
+
     const user = await User.findById(decoded.id).select('-password');
 
     if (!user) {
@@ -42,6 +41,6 @@ const isAuthenticated = async (req, res, next) => {
   }
 };
 
-module.exports = {
+export {
   isAuthenticated,
 };

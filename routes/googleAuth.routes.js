@@ -1,6 +1,6 @@
-const express = require('express');
-const passport = require('passport');
-const { googleAuthCallback } = require('../controllers/googleAuth.controller');
+import express from 'express';
+import passport from 'passport';
+import { googleAuthCallback } from '../controllers/googleAuth.controller.js';
 
 const router = express.Router();
 
@@ -28,4 +28,4 @@ router.get(
   googleAuthCallback 
 );
 
-module.exports = router;
+export default router;

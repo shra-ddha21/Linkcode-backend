@@ -1,4 +1,4 @@
-const { generateAccessToken, generateRefreshToken } = require('../utils/generateToken');
+import { generateAccessToken, generateRefreshToken } from '../utils/generateToken.js';
 
 // This controller executes AFTER passport finishes its logic (which finds or creates the user)
 const googleAuthCallback = async (req, res) => {
@@ -50,6 +50,6 @@ const googleAuthCallback = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   googleAuthCallback,
 };

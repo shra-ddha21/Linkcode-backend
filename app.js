@@ -1,10 +1,10 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const passport = require('passport');
-require('./config/passport');
-const authRoutes = require('./routes/auth.routes');
-const googleAuthRoutes = require('./routes/googleAuth.routes');
-const protectedRoutes = require('./routes/protected.routes');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import passport from 'passport';
+import './config/passport.js';
+import authRoutes from './routes/auth.routes.js';
+import googleAuthRoutes from './routes/googleAuth.routes.js';
+import protectedRoutes from './routes/protected.routes.js';
 
 const app = express();
 
