@@ -16,6 +16,12 @@ app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: '/tmp/'
 }));
+require('dotenv').config(); // Always load env variables first!
+const app = require('./app');
+const connectDB = require('./config/db'); // 1. Import the database connection
+
+// 2. Use the imported function to connect to MongoDB
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 // database connection
