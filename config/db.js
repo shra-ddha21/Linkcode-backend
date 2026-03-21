@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-require('dotenv').config(); // Load environment variables from .env file
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config(); // Load environment variables from .env file
 
 const connectDB = async () => {
   try {
@@ -15,4 +16,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

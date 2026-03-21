@@ -1,13 +1,10 @@
 
+import 'dotenv/config.js';
 import app from "./app.js";
 import mongoose from 'mongoose';
 import cloudinary from "cloudinary";
 import fileUpload from "express-fileupload";
 import courseRouter from "./routes/course.routes.js";
-
-import dotenv from "dotenv";
-
-dotenv.config();
 
 
 
@@ -16,12 +13,6 @@ app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: '/tmp/'
 }));
-require('dotenv').config(); // Always load env variables first!
-const app = require('./app');
-const connectDB = require('./config/db'); // 1. Import the database connection
-
-// 2. Use the imported function to connect to MongoDB
-connectDB();
 
 const PORT = process.env.PORT || 5000;
 // database connection

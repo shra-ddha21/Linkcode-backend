@@ -1,8 +1,8 @@
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const User = require('../models/User');
-const bcrypt = require('bcrypt');
-const crypto = require('crypto');
+import passport from 'passport';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import User from '../models/User.js';
+import bcrypt from 'bcrypt';
+import crypto from 'crypto';
 
 passport.use(
   new GoogleStrategy(
@@ -49,4 +49,4 @@ passport.use(
 );
 
 // We export passport so we can drop it straight into our routes later
-module.exports = passport;
+export default passport;
